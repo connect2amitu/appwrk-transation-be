@@ -1,4 +1,8 @@
-# Introduction
+# Office Transaction System
+
+A backend API for managing office transactions including cash inflow and outflow.
+
+## Introduction
 
 You are going to build Transaction system for an office where Account Manager will be Managing Daily Expenses for Cash Inflow / Outflow.
 
@@ -21,7 +25,7 @@ with 5 columns Date, Description, Credit, Debit & Running Balance should be disp
 
 ### 2. Add Transaction Page
 
-When user clicks on “+ Add Transaction Page” it will show the “New Transaction Page”.
+When user clicks on "+ Add Transaction Page" it will show the "New Transaction Page".
 
 #### Transaction type
 
@@ -30,3 +34,67 @@ will be dropdown with one option can be selected at one time (Credit/Debit), Amo
 #### On Click of Save
 
 it will create new transaction record in Database and redirect to Office Transactions page
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+
+### Installation
+
+1. Clone the repository
+   ```
+   git clone <repository-url>
+   cd account-backend
+   ```
+
+2. Install dependencies
+   ```
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory with the following variables:
+   ```
+   PORT=3000
+   MONGODB_URI=mongodb://localhost:27017/office-transactions
+   NODE_ENV=development
+   ```
+
+### Running the Application
+
+- For development with auto-restart:
+  ```
+  npm run dev
+  ```
+
+- For production:
+  ```
+  npm start
+  ```
+
+- The server will run on http://localhost:3000 (or the PORT specified in your .env file)
+- Health check endpoint: http://localhost:3000/health
+
+## API Endpoints
+
+- `GET /api/transactions` - Get all transactions
+- `POST /api/transactions` - Create a new transaction
+- More endpoints available in API_README.md
+
+## Technologies Used
+
+### Dependencies
+
+- **express** (^4.18.2): Web framework for Node.js
+- **mongoose** (^7.5.0): MongoDB object modeling tool
+- **cors** (^2.8.5): Enable Cross-Origin Resource Sharing
+- **dotenv** (^16.3.1): Load environment variables from .env file
+- **express-validator** (^7.0.1): Validation middleware for Express
+- **helmet** (^7.0.0): Secure Express apps by setting HTTP headers
+- **morgan** (^1.10.0): HTTP request logger middleware
+
+### Dev Dependencies
+
+- **nodemon** (^3.0.1): Utility for auto-restarting the server during development
